@@ -45,15 +45,17 @@ const CategoryDrop = () => {
     console.log(active.id, "ACTIVE ID");
 
     if (active.id === over.id) {
-      setSelectedCategory(categories[active.id -1].category);
+      setSelectedCategory(categories[active.id - 1].category);
     }
 
-    const newCategoryArry = arrayMove(categories, originalPos, newPos);
     const newFoodsArray = arrayMove(menu, originalPos, newPos);
+    const newCategoryArray = newFoodsArray.map((item, index) => {
+      return {id: index +1, category: item[0].category}
+    })
 
-    console.log(newCategoryArry, "new Category Array");
+    console.log(newCategoryArray, "new Category Array");
     console.log(newFoodsArray, "new Foods Array");
-    moveCategory(newCategoryArry, newFoodsArray);
+    moveCategory(newCategoryArray, newFoodsArray);
   };
 
   return (

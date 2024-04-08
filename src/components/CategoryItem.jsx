@@ -28,7 +28,7 @@ const CategoryItem = ({ item, id }) => {
       {...listeners}
       style={style}
       className={`w-[95%] my-2 py-4 border-l-[5px] rounded-lg bg-gray-100 shadow-sm ${
-        selectedCategory !== item ? "border-gray-300" : "border-purple-300"
+        selectedCategory !== item.category ? "border-gray-300" : "border-purple-300"
       }`}
       onClick={() => {
         console.log("Category Clicked");
